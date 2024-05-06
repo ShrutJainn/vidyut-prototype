@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./Map.module.css";
 import {
   MapContainer,
@@ -6,7 +6,6 @@ import {
   Marker,
   Popup,
   useMap,
-  useMapEvent,
   useMapEvents,
 } from "react-leaflet";
 import { useEffect, useState } from "react";
@@ -18,7 +17,7 @@ import { useUrlPosition } from "../hooks/useUrlPosition";
 function Map() {
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
-  const [searchParams] = useSearchParams();
+  // const [searchParams] = useSearchParams();
   const {
     isLoading: isLoadingPosition,
     position: geolocationPosition,
@@ -47,7 +46,7 @@ function Map() {
         center={
           mapLat && mapLng ? [Number(mapLat), Number(mapLng)] : mapPosition
         }
-        zoom={6}
+        zoom={20}
         scrollWheelZoom={true}
         className={styles.map}
       >
@@ -84,6 +83,7 @@ function DetectClick() {
 
   useMapEvents({
     click: (e) => {
+      console.log(e);
       navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
     },
   });

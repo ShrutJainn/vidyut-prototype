@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable no-unused-vars */
 // "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
 
@@ -79,7 +80,13 @@ function Form() {
 
   if (isLoadingGeocoding) return <Spinner />;
 
-  if (!lat && !lng) return <Message message="Start by clicking on the map" />;
+  if (!lat && !lng)
+    return (
+      <Message
+        style={{ color: "white" }}
+        message="Start tracking by clicking on your street"
+      />
+    );
 
   if (geocodingError) return <Message message={geocodingError} />;
 
@@ -89,36 +96,33 @@ function Form() {
       className={`${styles.form} ${isLoading ? styles.loading : ""} `}
     >
       <div className={styles.row}>
-        <label htmlFor="cityName">City name</label>
-        <input
+        <label htmlFor="cityName">Street name</label>
+        <textarea
           id="cityName"
+          style={{ color: "black" }}
           onChange={(e) => setCityName(e.target.value)}
-          value={cityName}
-        />
-        <span className={styles.flag}>{emoji}</span>
-      </div>
-
-      <div className={styles.row}>
-        <label htmlFor="date">When did you go to {cityName}?</label>
-        <DatePicker
-          id="date"
-          onChange={(date) => setDate(date)}
-          selected={date}
-          dateFormat="dd/MM/yyyy"
+          value="21-A, Varni Colony, Sagar"
         />
       </div>
 
       <div className={styles.row}>
+        <label htmlFor="date">Charge Percentage (%)</label>
+        <input id="chargePercent" value={87} disabled />
+      </div>
+
+      {/* <div className={styles.row}>
         <label htmlFor="notes">Notes about your trip to {cityName}</label>
         <textarea
           id="notes"
           onChange={(e) => setNotes(e.target.value)}
           value={notes}
         />
-      </div>
+      </div> */}
 
       <div className={styles.buttons}>
-        <Button type="primary">Add</Button>
+        <Button type="primary" onClick={() => navigate("/street")}>
+          View Details
+        </Button>
         <BackButton />
       </div>
     </form>

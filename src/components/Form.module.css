@@ -1,11 +1,15 @@
 .form {
+  margin-top: 3vh;
   background-color: var(--color-dark--2);
+  color: white;
   border-radius: 7px;
-  padding: 2rem 3rem;
+  padding: 0.7rem 3rem;
+  padding-bottom: 1rem;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  height: 30vh;
 }
 
 .row {
@@ -15,9 +19,20 @@
   position: relative;
 }
 
+.row input {
+  height: 5vh;
+  font-size: 1.5rem;
+  padding-left: 1vw;
+}
+.row textarea {
+  padding-left: 1vw;
+}
+
 .buttons {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  gap: 2vw;
 }
 
 .flag {

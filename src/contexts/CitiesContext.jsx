@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useCallback } from "react";
 import { createContext, useContext, useEffect, useReducer } from "react";
 
@@ -159,5 +160,4 @@ function useCities() {
   return context;
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export { CitiesProvider, useCities };

@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto");
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: roboto, OpenSans, Helvetica, sans-serif;
+}
+:root {
+  --main-color: #f36e57;
+  --gray-color: #ececec;
+}
+.container {
+  color: black;
+  display: flex;
+  .selection {
+    /* // height: 800px; */
+    background-repeat: none;
+    background-size: cover;
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px 30px;
+  }
+  .selection__label {
+    background-color: rgba(255, 255, 255, 0.15);
+    display: flex;
+    padding: 30px 40px;
+    align-items: center;
+    transition: all 250ms;
+    font-size: 18px;
+    line-height: 21px;
+    color: white;
+    margin: 20px auto;
+    min-width: calc(100% - 80px);
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.35);
+    }
+  }
+  .selection__labelPrice {
+    /* // flex: 1 0 20%; */
+    flex: 1 1 auto;
+    font-size: 1.75em;
+    padding-right: 10px;
+    min-width: 25%;
+  }
+  .selection__labelContent {
+    /* // flex: 1 1 80%; */
+    flex: 1 1 auto;
+  }
+  .form {
+    background-color: #f3f3f3;
+    height: 800px;
+    flex: 1 1 50%;
+  }
+}
+
+.donatelyValidation {
+  max-width: 750px;
+  margin: 0 auto;
+  border: none;
+  padding: 100px;
+  background: #f3f3f3;
+}
+.donatelyValidation .formTitle,
+.donatelyValidation .personalTitle {
+  margin-bottom: 30px;
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-size: 1.375em;
+  font-family: Roboto, Open Sans, Arial, sans-serif;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+}
+
+.donately-donation-form input.donately-text-input,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea {
+  /* // background-color: #f3f3f3; */
+  border: 2px solid #fff;
+  font-size: 18px;
+  line-height: 25px;
+  color: #777;
+  /* // height: 52px;   */
+  padding: 0 20px;
+  padding-left: 20px;
+}
+
+.donatelyValidation .inputPriceOptions li input[type="radio"]:checked + label {
+  background: #f36e57;
+  color: #fff;
+  transition: all 250ms ease-in-out;
+}
+.donatelyValidation .inputPriceOptions .form_radio input {
+  display: none;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.formRadio {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  padding-left: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  li {
+    display: flex;
+    /* // margin-right: 10px; */
+    margin: 5px;
+    flex: 1 0 120px;
+    /* // min-width: 120px; */
+  }
+  /* li:last-of-type {
+    // margin-right: 0px;
+  } */
+  label {
+    background-color: white;
+    padding: 15px 40px;
+    cursor: pointer;
+    color: #777;
+    flex: auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+.otherAmount {
+  display: flex;
+  background-color: white;
+  padding-left: 30px;
+  color: #777;
+  margin: 5px;
+  input {
+    flex: auto;
+    padding-left: 15px;
+    border: none;
+    padding: 15px 40px 15px 0px;
+  }
+  label {
+    align-self: center;
+    padding-right: 5px;
+  }
+}
+
+/* //invalid choice  */
+.invalidChoise {
+  display: none;
+}
+
+.radioDonation {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px;
+  }
+}
+
+.formContact {
+  display: flex;
+  flex-direction: column;
+  .form__fieldName {
+    display: flex;
+    input {
+      /* padding: 15px; */
+      margin: 5px;
+      flex: auto;
+    }
+  }
+  .form__fieldEmail {
+    display: flex;
+    input {
+      /* padding: 15px; */
+      /* margin: 5px; */
+      margin-left: 0.4rem;
+      margin-bottom: 4rem;
+      flex: auto;
+    }
+  }
+}
+
+.btn {
+  display: flex;
+  padding: 20px;
+  border: none;
+  background-color: var(--main-color);
+  color: white;
+  margin: 20px 5px;
+  flex: 1 1 200px;
+  min-width: 200px;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+  &:hover {
+    background-color: #f68f7d;
+  }
+}
+#donate_card_info {
+  padding-bottom: 3vw;
+}
+
+/* //Media Breaks */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+  }
+}

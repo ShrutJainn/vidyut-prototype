@@ -1,0 +1,65 @@
+.container {
+  height: 7vw;
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+.imageContainer {
+  height: 100%;
+  width: 5vw;
+  /* object-fit: contain; */
+}
+.image {
+  height: 100%;
+  width: 6vw;
+  border-right: 1px solid black;
+}
+
+.details {
+  height: 100%;
+  width: 92vw;
+  display: flex;
+  flex-direction: column;
+}
+.upper {
+  height: 50%;
+}
+.lower {
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.issueButton {
+  height: fit-content;
+  background-color: #ff4d4d; /* Red background color */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 20px; /* Rounded borders */
+  padding: 10px 20px; /* Padding */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Cursor style */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.issueButton:hover {
+  background-color: #ff6666; /* Darker red on hover */
+}
+.premiumButton {
+  height: fit-content;
+  background-color: #4caf50; /* Green background color */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 20px; /* Rounded borders */
+  padding: 10px 20px; /* Padding */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Cursor style */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  margin-right: 3vw;
+}
+
+.premiumButton:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
