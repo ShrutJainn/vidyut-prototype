@@ -6,6 +6,7 @@ import SpinnerFullPage from "./components/SpinnerFullPage";
 import StreetDetails from "./pages/StreetDetails";
 import Donation from "./pages/Donation";
 import Intensity from "./pages/Intensity";
+import AuthPage from "./pages/AuthPage";
 
 // import Product from "./pages/Product";
 // import Pricing from "./pages/Pricing";
@@ -43,6 +44,7 @@ function App() {
               </Route>
               <Route path="/login" element={<Login />} />
               <Route path="*" element={<PageNotFound />} /> */}
+            <Route path="/auth" element={<AuthPage />} />
             <Route path="/" element={<Homepage />} />
             <Route path="/app" element={<AppLayout />}>
               <Route path="form" element={<Form />} />
