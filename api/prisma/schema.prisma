@@ -1,0 +1,21 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  engineType = "library"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = "prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiNTk1Y2U2Y2UtNDkxZC00YzVhLTk2MzEtN2ZjNDY0YjM3ZmE1IiwidGVuYW50X2lkIjoiM2U4ZTcyNThjODk2ZTNlYjZmYTU2NDI4NzFlZWU2Y2NlZDY2ODIwMjRiZmEzYTViMGQ3NDJiYTM4NjExNTA2NCIsImludGVybmFsX3NlY3JldCI6IjZmNmVhODBlLWViYmQtNDQwNy1iZjdmLWFmNzlhNzIzZTZjNSJ9.wwc74fuV37CVKdHFs4l6uF9fJrh4u9Wg-yMg25fVJrc"
+  directUrl = "mongodb+srv://shrutjain488:S4lFGSkf2uUAXbg9@cluster0.cwhip4e.mongodb.net/vidyutDb"
+}
+
+model User {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  username String @unique
+  name  String
+  email String @unique
+  password String
+}
