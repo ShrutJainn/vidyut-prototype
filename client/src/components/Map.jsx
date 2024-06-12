@@ -13,6 +13,8 @@ import { useCities } from "../contexts/CitiesContext";
 import { useGeolocation } from "../hooks/useGeolocation";
 import Button from "./Button";
 import { useUrlPosition } from "../hooks/useUrlPosition";
+import { useSetRecoilState } from "recoil";
+import streetAtom from "../atoms/streetAtom";
 
 function Map() {
   const { cities } = useCities();
@@ -80,11 +82,18 @@ function ChangeCenter({ position }) {
 }
 function DetectClick() {
   const navigate = useNavigate();
+  const setStreet = useSetRecoilState(streetAtom);
 
   useMapEvents({
-    click: (e) => {
+    click: async (e) => {
       console.log(e);
       navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
+      const response = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${e.latlng.lat}&lon=${e.latlng.lng}`
+      );
+      const data = await response.json();
+      // alert(data.display_name); // Display the street name
+      setStreet(data.display_name);
     },
   });
 }

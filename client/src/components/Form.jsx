@@ -14,6 +14,8 @@ import { useUrlPosition } from "../hooks/useUrlPosition";
 import Message from "./Message";
 import Spinner from "./Spinner";
 import { useCities } from "../contexts/CitiesContext";
+import { useRecoilValue } from "recoil";
+import streetAtom from "../atoms/streetAtom";
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -34,6 +36,7 @@ function Form() {
   const [geocodingError, setGeocodingError] = useState("");
   const [emoji, setEmoji] = useState("");
   const { createCity, isLoading } = useCities();
+  const street = useRecoilValue(streetAtom);
 
   const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
@@ -101,7 +104,8 @@ function Form() {
           id="cityName"
           style={{ color: "black" }}
           onChange={(e) => setCityName(e.target.value)}
-          value="21-A, Varni Colony, Sagar"
+          // disabled
+          value={street}
         />
       </div>
 
