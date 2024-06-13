@@ -13,6 +13,8 @@ import { z } from "zod";
 
 type Bindings = {
   JWT_SECRET: string;
+  TWILIO_ACCOUNT_SID: string;
+  TWILIO_ACCOUNT_TOKEN: string;
 };
 type Variables = {
   user: any;

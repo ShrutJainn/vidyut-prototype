@@ -4,18 +4,15 @@
     "deploy": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {
+    "@jridgewell/sourcemap-codec": "^1.4.15",
     "@prisma/client": "^5.15.0",
     "@prisma/engines": "^5.15.0",
     "@prisma/extension-accelerate": "^1.1.0",
+    "@rollup/plugin-inject": "^5.0.5",
     "bcryptjs": "^2.4.3",
-    "crypto": "^1.0.1",
-    "dotenv": "^16.4.5",
     "hono": "^4.4.5",
     "jose": "^5.4.0",
     "mongoose": "^8.4.1",
-    "os": "^0.1.2",
-    "path": "^0.12.7",
-    "path-browserify": "^1.0.1",
     "prisma": "^5.15.0",
     "zod": "^3.23.8"
   },
